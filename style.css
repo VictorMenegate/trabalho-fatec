@@ -494,12 +494,11 @@ main {
   }
 
   .search-container input[type="text"] {
-    padding: 8px;
-    top: 20rem;/* Melhor ajuste para telas menores */
+    padding: 8px;/* Melhor ajuste para telas menores */
   }
 
   .search-container{
-    top: 20rem;/* Melhor ajuste para telas menores */
+    top: 0rem;
   }
 
   footer {
