@@ -495,7 +495,7 @@ main {
 
   .search-container input[type="text"] {
     padding: 8px;
-    top: 15rem;/* Melhor ajuste para telas menores */
+    top: 20rem;/* Melhor ajuste para telas menores */
   }
 
   footer {
