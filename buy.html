@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/icons8-controle-16.png" type="image/x-icon">
+
+    <title>Área de Pagamento</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        background-image: linear-gradient(-45deg, #1b2838 75%, #2c445e);
+        color: #c7d5e0;
+        margin: 0;
+        padding: 0;
+      }
+
+      .baner {
+        position: absolute;
+        top: -1rem;
+
+        z-index: -3;
+        width: 100%;
+        max-height: 10rem;
+      }
+
+      .baner img {
+        width: 100%;
+        height: 10rem;
+        border-bottom: 2px solid #2c445e;
+      }
+      header {
+        display: flex;
+        background-color: #171a21;
+        color: white;
+        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #11161d;
+      }
+
+      header h1 {
+        margin: auto;
+        color: #66c0f4;
+        font-weight: bold;
+        font-size: 2rem; /* Ajuste para telas menores */
+      }
+
+      header a {
+        margin: auto;
+        color: #66c0f4;
+        font-weight: bold;
+        font-size: 2rem; /* Ajuste para telas menores */
+
+        text-decoration: none;
+      }
+
+      .container {
+        position: relative;
+        max-width: 800px;
+        margin: 10rem auto 5rem;
+        padding: 20px;
+        background-color: #11161d;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        margin-top: 20px;
+        color: #4caf50;
+      }
+
+      button {
+        background-color: #66c0f4;
+      }
+
+      .input-group {
+        margin-bottom: 15px;
+      }
+      .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      .input-group input,
+      .input-group select {
+        position: relative;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #1b2838;
+      }
+
+      #country {
+        color: #c7d5e0;
+      }
+
+      .payment-methods {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      .payment-method {
+        flex: 1;
+        text-align: center;
+        padding: 15px;
+        margin: 0 10px;
+        background-color: #1b2838;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border 0.3s ease;
+      }
+      .payment-method img {
+        max-width: 100px;
+        margin-bottom: 10px;
+      }
+      .payment-method:hover {
+        border-color: #4caf50;
+      }
+      .submit-btn {
+        width: 100%;
+        padding: 15px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+      }
+      .submit-btn:hover {
+        background-color: #45a049;
+      }
+
+      footer {
+        border-top: 2px solid #11161d;
+        background-color: #171a21;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+        bottom: 0;
+      }
+
+      @media (max-width: 768px) {
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/index.html"><h1>LevelUp</h1></a>
+    </header>
+
+    <div class="baner">
+      <img src="/17_10_2024 17_18_29.png" alt="" />
+    </div>
+
+    <div class="container">
+      <h1>Área de Pagamento</h1>
+
+      <form id="paymentForm">
+        <div class="input-group">
+          <label for="name">Nome Completo</label>
+          <input type="text" id="name" required />
+        </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="input-group">
+          <label for="email">CPF</label>
+          <input type="number" id="CPF" required />
+        </div>
+
+        <div class="input-group">
+            <label for="country">Selecione seu país:</label>
+            <select id="country">
+                <option value="BRL">Brasil (BRL)</option>
+                <option value="USD">Estados Unidos (USD)</option>
+                <option value="EUR">Europa (EUR)</option>
+                <option value="JPY">Japão (JPY)</option>
+                <option value="INR">Índia (INR)</option>
+            </select>
+        </div>
+    
+        <div class="input-group">
+            <label for="amount">Valor a pagar (conversão automática):</label>
+            <input type="text" id="amount" placeholder="Digite o valor">
+        </div>
+    
+
+
+      <h2>Métodos de Pagamento</h2>
+      <div class="payment-methods">
+        <div
+          class="payment-method"
+          onclick="selectPaymentMethod('credit-card')"
+        >
+          <img src="/cartao-de-credito.png" alt="Cartão de Crédito" />
+          <p>Cartão de Crédito</p>
+        </div>
+        <div class="payment-method" onclick="selectPaymentMethod('paypal')">
+          <img src="/paypal.png" alt="PayPal" />
+          <p>PayPal</p>
+        </div>
+        <div class="payment-method" onclick="selectPaymentMethod('regional')">
+          <img src="/fatura.png" alt="Boleto" />
+          <p>Pagamento Regional (ex. Boleto)</p>
+        </div>
+      </div>
+
+      <button class="submit-btn">Confirmar Pagamento</button>
+    </div>
+
+    <footer>
+      <p>© 2024 Plataforma de Jogos. Todos os direitos reservados.</p>
+      <p>
+        Formas de pagamento suportadas: Cartão de Crédito, PayPal, Boleto, PIX
+      </p>
+    </footer>
+
+    <script>
+
+
+      // Conversão de moeda (simples exibição, sem lógica real de conversão)
+      document.getElementById('country').addEventListener('change', function() {
+          const country = this.value;
+          let currencySymbol;
+          switch (country) {
+              case 'BRL':
+                  currencySymbol = 'R$';
+                  break;
+              case 'USD':
+                  currencySymbol = '$';
+                  break;
+              case 'EUR':
+                  currencySymbol = '€';
+                  break;
+              case 'JPY':
+                  currencySymbol = '¥';
+                  break;
+              case 'INR':
+                  currencySymbol = '₹';
+                  break;
+              default:
+                  currencySymbol = '$';
+          }
+      });
+    </script>
+  </body>
+</html>

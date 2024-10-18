@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="/icons8-controle-16.png"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="/style.css" />
+    <title>Devs</title>
+  </head>
+  <body>
+    <header>
+      <a href="/index.html"><h1>LevelUp</h1></a>
+    </header>
+
+    <div class="banerDev">
+      <img src="/17_10_2024 17_18_29.png" alt="" />
+    </div>
+
+    <main>
+      <div class="dev-actions">
+        <h3>Upload de Jogo</h3>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <label for="gameTitle">Título do Jogo:</label>
+          <input type="text" id="gameTitle" name="gameTitle" required />
+          <label for="gameFile">Arquivo do Jogo (ZIP):</label>
+          <input type="file" id="gameFile" name="gameFile" required />
+          <button type="submit">Enviar Jogo</button>
+        </form>
+      </div>
+
+      <div class="dev-stats">
+        <h3>Estatísticas de Vendas</h3>
+        <p>Vendas totais: <span id="totalSales">200</span></p>
+        <p>Feedbacks recebidos: <span id="totalFeedback">150</span></p>
+
+        <h3>Feedbacks dos Jogadores</h3>
+        <ul id="feedbackList">
+          <li>"Ótimo jogo, muito envolvente!" - Usuário 1</li>
+          <li>"Adorei os gráficos!" - Usuário 2</li>
+          <!-- Feedbacks adicionais -->
+        </ul>
+      </div>
+
+      <div class="dev-monetization">
+        <h3>Opções de Monetização</h3>
+        <form action="/monetization" method="POST">
+          <label for="monetizationType">Escolha o tipo de monetização:</label>
+          <select id="monetizationType" name="monetizationType">
+            <option value="single">Venda Única</option>
+            <option value="subscription">Assinatura</option>
+            <option value="microtransactions">Microtransações</option>
+          </select>
+          <button type="submit">Salvar</button>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>© 2024 Plataforma de Jogos. Todos os direitos reservados.</p>
+      <p>
+        Formas de pagamento suportadas: Cartão de Crédito, PayPal, Boleto, PIX
+      </p>
+    </footer>
+  </body>
+</html>
