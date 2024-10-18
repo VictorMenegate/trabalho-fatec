@@ -498,6 +498,10 @@ main {
     top: 20rem;/* Melhor ajuste para telas menores */
   }
 
+  .search-container{
+    top: 20rem;/* Melhor ajuste para telas menores */
+  }
+
   footer {
     font-size: 0.9rem;/* Reduzir tamanho do texto para telas pequenas */
   }
