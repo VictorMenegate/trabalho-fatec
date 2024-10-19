@@ -520,5 +520,6 @@ main {
 
   .game-card:hover {
     margin-bottom: 0rem;
+    transform: scale(1);
   }
 }
