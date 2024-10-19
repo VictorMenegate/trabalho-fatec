@@ -478,7 +478,8 @@ main {
 
 
   baner {
-    top: 14rem;
+    top: 12rem;
+  }
   
   header {
     max-width: 100vh;
