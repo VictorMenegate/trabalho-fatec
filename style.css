@@ -476,6 +476,10 @@ main {
     padding: 0;
   }
 
+
+  baner {
+    top: 14rem;
+  
   header {
     max-width: 100vh;
   }
@@ -495,12 +499,10 @@ main {
   }
 
   .search-container input[type="text"] {
-    padding: 8px;/* Melhor ajuste para telas menores */
+    padding: 8px;
+    top: 16rem;
   }
 
-  .search-container{
-    top: 17rem;
-  }
 
   footer {
     font-size: 0.9rem;/* Reduzir tamanho do texto para telas pequenas */
